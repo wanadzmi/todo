@@ -3,18 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:todo/models/todo_model.dart';
 
+// Insert Title Validator
 class InsertTitleValidator {
   static String? validate(String value) {
     return value.isEmpty ? 'Title can\'t be empty' : null;
   }
 }
 
+// Insert Start Date Validator
 class InsertStartDateValidator {
   static String? validate(DateTime? value) {
     return value == null ? 'Start Date can\'t be empty' : null;
   }
 }
 
+// Insert End Date Validator
 class InsertEndDateValidator {
   static String? validate(DateTime? value) {
     return value == null ? 'End Date can\'t be empty' : null;
