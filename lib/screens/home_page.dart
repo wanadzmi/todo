@@ -63,6 +63,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           // Pass delete functions to the TodoList widget so that this functions can be use there.
           TodoList(
+            insertFunction: insertItem,
             deleteFunction: deleteItem,
           ),
         ],

@@ -14,6 +14,7 @@ class TodoCard extends StatefulWidget {
   final DateTime endDate;
   final DateTime creationDate;
   bool isChecked;
+  final Function insertFunction;
   final Function deleteFunction;
 
   TodoCard(
@@ -23,6 +24,7 @@ class TodoCard extends StatefulWidget {
       required this.endDate,
       required this.creationDate,
       required this.isChecked,
+      required this.insertFunction,
       required this.deleteFunction,
       Key? key})
       : super(key: key);
@@ -279,6 +281,7 @@ class _TodoCardState extends State<TodoCard> {
                                                 widget.isChecked = value!;
                                               });
                                               passTodo.isChecked = value!;
+                                              widget.insertFunction(passTodo);
                                             },
                                           ),
                                         ),

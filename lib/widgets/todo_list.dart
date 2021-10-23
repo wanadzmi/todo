@@ -3,9 +3,14 @@ import '../db/todo_db.dart';
 import './todo_card.dart';
 
 class TodoList extends StatefulWidget {
+  final Function insertFunction;
   final Function deleteFunction;
 
-  const TodoList({required this.deleteFunction, Key? key}) : super(key: key);
+  const TodoList({
+    required this.insertFunction,
+    required this.deleteFunction,
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<TodoList> createState() => _TodoListState();
@@ -39,6 +44,7 @@ class _TodoListState extends State<TodoList> {
                           endDate: data[i].endDate,
                           creationDate: data[i].creationDate,
                           isChecked: data[i].isChecked,
+                          insertFunction: widget.insertFunction,
                           deleteFunction: widget.deleteFunction));
             }));
   }
