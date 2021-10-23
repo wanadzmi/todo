@@ -24,11 +24,12 @@
 
 ## Key Features
 
+* Tick, Untick Task
 * Insert, update and remove tasks
 * Set start time and end time for the tasks
-* Tick, Untick Task
-* Use of Sqflite database for data persistence and can store data locally
 * Add unit test
+* Use of Sqflite database for data persistence and can store data locally
+
 
 
 ## How To Use
