@@ -3,6 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:todo/models/todo_model.dart';
 
+class InsertTitleValidator {
+  static String? validate(String value) {
+    return value.isEmpty ? 'Title can\'t be empty' : null;
+  }
+}
+
+class InsertStartDateValidator {
+  static String? validate(DateTime? value) {
+    return value == null ? 'Start Date can\'t be empty' : null;
+  }
+}
+
+class InsertEndDateValidator {
+  static String? validate(DateTime? value) {
+    return value == null ? 'End Date can\'t be empty' : null;
+  }
+}
+
 class InsertPage extends StatefulWidget {
   // To receive & use insert function
   final Function insertFunction;
@@ -60,12 +78,7 @@ class _InsertPageState extends State<InsertPage> {
                       hintStyle: TextStyle(fontSize: 13, color: Colors.black38),
                       border: OutlineInputBorder(borderSide: BorderSide()),
                     ),
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'Please enter some text';
-                      }
-                      return null;
-                    },
+                    validator: (value) => InsertTitleValidator.validate(value!),
                   ),
                   const SizedBox(height: 30),
                   const Text(
@@ -82,13 +95,8 @@ class _InsertPageState extends State<InsertPage> {
                       border: OutlineInputBorder(borderSide: BorderSide()),
                     ),
                     format: format,
-                    validator: (value) {
-                      if (value == null) {
-                        // Start date cannot be empty
-                        return 'Please select start date';
-                      }
-                      return null;
-                    },
+                    validator: (value) =>
+                        InsertStartDateValidator.validate(value),
                     onShowPicker: (context, currentValue) {
                       return showDatePicker(
                           context: context,
@@ -122,12 +130,8 @@ class _InsertPageState extends State<InsertPage> {
                               DateTime.now().subtract(const Duration(days: 0)),
                           lastDate: DateTime(2100));
                     },
-                    validator: (value) {
-                      if (value == null) {
-                        return 'Please select estimate end date';
-                      }
-                      return null;
-                    },
+                    validator: (value) =>
+                        InsertEndDateValidator.validate(value),
                   ),
                 ],
               ),
