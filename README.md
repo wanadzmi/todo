@@ -32,8 +32,8 @@
 
 ## How To Use
 
-This project build with Flutter Version 2.5.0 (Stable). 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Flutter](https://flutter.dev/docs/get-started/install) installed on your computer. From your command line:
+This project is build with Flutter Version 2.5.0 (Stable). 
+To clone and run this project, you'll need [Git](https://git-scm.com) and [Flutter](https://flutter.dev/docs/get-started/install) installed on your computer. From your command line:
 
 ```bash
 # Clone this repository
