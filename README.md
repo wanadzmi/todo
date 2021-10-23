@@ -27,6 +27,7 @@
 * Insert, update and remove tasks
 * Set start time and end time for the tasks
 * Use of Sqflite database for data persistence and can store data locally
+* Add unit test for all functions
 
 
 ## How To Use
