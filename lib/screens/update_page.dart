@@ -6,6 +6,12 @@ import 'package:todo/db/todo_db.dart';
 import 'package:todo/models/todo_model.dart';
 import 'package:todo/screens/home_page.dart';
 
+class UpdateTitleValidator {
+  static String? validate(String value) {
+    return value.isEmpty ? 'Title can\'t be empty' : null;
+  }
+}
+
 class UpdatePage extends StatefulWidget {
   final Function updateFunction;
   final Todo? todo;
@@ -90,12 +96,7 @@ class _UpdatePageState extends State<UpdatePage> {
                       hintStyle: TextStyle(fontSize: 13, color: Colors.black38),
                       border: OutlineInputBorder(borderSide: BorderSide()),
                     ),
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'Please enter some text';
-                      }
-                      return null;
-                    },
+                    validator: (value) => UpdateTitleValidator.validate(value!),
                   ),
                   const SizedBox(height: 30),
                   const Text(
